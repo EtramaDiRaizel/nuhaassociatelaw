@@ -1,69 +1,74 @@
 "use client";
 
-import { useState } from "react";
-import ScrambleText from "./ScrambleText";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      document.documentElement.setAttribute('data-lenis-prevent', '');
-    } else {
-      document.documentElement.removeAttribute('data-lenis-prevent');
-    }
+    document.body.style.overflow = !isOpen ? "hidden" : "";
   };
 
   const closeMenu = () => {
     setIsOpen(false);
-    document.documentElement.removeAttribute('data-lenis-prevent');
+    document.body.style.overflow = "";
   };
 
   const links = [
-    { name: "HOME", href: "#home" },
-    { name: "EXPERTISE", href: "#expertise" },
-    { name: "MILESTONES", href: "#milestones" },
-    { name: "OUR TEAM", href: "#team" },
-    { name: "TESTIMONIES", href: "#testimonies" },
-    { name: "CLIENT PORTAL", href: "#portal" },
-    { name: "PRICE LIST", href: "#pricing" },
-    { name: "CONTACT US", href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "Expertise", href: "#expertise" },
+    { name: "Practice Areas", href: "#practice" },
+    { name: "Milestones", href: "#milestones" },
+    { name: "Our Team", href: "#team" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Client Portal", href: "#portal" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <>
-      <div className={`menu-overlay ${isOpen ? "is-active" : ""}`}>
-        <div className="menu-links">
+      <div className={`menu-overlay ${isOpen ? "menu-overlay--active" : ""}`}>
+        <nav className="menu-overlay__links">
           {links.map((link, i) => (
-            <a 
-              key={i} 
-              href={link.href} 
-              className="menu-link" 
+            <a
+              key={i}
+              href={link.href}
+              className="menu-overlay__link"
               onClick={closeMenu}
             >
-              <ScrambleText text={link.name} triggerOnHover />
+              {link.name}
             </a>
           ))}
-        </div>
-        <div className="menu-footer mono">
-          NUHA & ASSOCIATES — ADVOCATES & SOLICITORS
+        </nav>
+        <div className="menu-overlay__footer">
+          Nuha & Associates — Advocates & Solicitors
         </div>
       </div>
 
-      <nav className="navigation">
-        <div className="nav-branding">
-          <ScrambleText text="nuhaassociateslaw" displayOverride="NUHA" animateOnMount />
-        </div>
-        <button 
-          className="nav-toggle" 
+      <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+        <a href="#home" className="nav__logo">
+          NUHA<span>&</span>ASSOCIATES
+        </a>
+        <button
+          className={`hamburger ${isOpen ? "hamburger--active" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle Navigation"
         >
-          <span className="cross-line cross-1"></span>
-          <span className="cross-line cross-2"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </nav>
+      </header>
     </>
   );
 }
