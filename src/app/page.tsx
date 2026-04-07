@@ -7,6 +7,9 @@ import { useState } from "react";
 
 export default function Home() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
+  const [staffEmail, setStaffEmail] = useState("");
+  const [staffPassword, setStaffPassword] = useState("");
+
   return (
     <>
       <Navbar />
@@ -505,25 +508,45 @@ export default function Home() {
           </div>
 
           <ScrollReveal delay={500}>
-            <a
-              className="portal__cta"
-              href="https://forms.gle/yukpgfU8DBzt6uen9"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Client login
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <a
+                className="portal__cta"
+                href="https://forms.gle/yukpgfU8DBzt6uen9"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+                Client portal
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                className="portal__cta"
+                href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff' }}
+              >
+                Warrant to Act (Download Authorization Form)
+              </a>
+              <a
+                className="portal__cta"
+                href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff' }}
+              >
+                Data Privacy Policy (View our privacy commitment)
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -544,7 +567,13 @@ export default function Home() {
               <form 
                 onSubmit={(e) => { 
                   e.preventDefault(); 
-                  window.open("https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP", "_blank"); 
+                  if (staffEmail === "nuhalaw@gmail.com" && staffPassword === "password123") {
+                    window.open("https://drive.google.com/drive/folders/1KzGkeZBMGvL3c4J_kZ8dwPt-Zdsmlxqi", "_blank"); 
+                    setStaffEmail("");
+                    setStaffPassword("");
+                  } else {
+                    alert("Invalid credentials. Please contact administration.");
+                  }
                 }}
                 style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}
               >
@@ -554,6 +583,8 @@ export default function Home() {
                     type="email" 
                     placeholder="staff@nuhaassociates.com" 
                     required 
+                    value={staffEmail}
+                    onChange={(e) => setStaffEmail(e.target.value)}
                     style={{ width: "100%", padding: "0.8rem 1rem", border: "1px solid #ccc", borderRadius: "4px", fontSize: "1rem", outline: "none", transition: "border 0.2s" }}
                     onFocus={(e) => e.target.style.borderColor = "var(--blue-primary)"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
@@ -565,6 +596,8 @@ export default function Home() {
                     type="password" 
                     placeholder="••••••••" 
                     required 
+                    value={staffPassword}
+                    onChange={(e) => setStaffPassword(e.target.value)}
                     style={{ width: "100%", padding: "0.8rem 1rem", border: "1px solid #ccc", borderRadius: "4px", fontSize: "1rem", outline: "none", transition: "border 0.2s" }}
                     onFocus={(e) => e.target.style.borderColor = "var(--blue-primary)"}
                     onBlur={(e) => e.target.style.borderColor = "#ccc"}
@@ -575,17 +608,18 @@ export default function Home() {
                   style={{ 
                     marginTop: "1rem", 
                     width: "100%", 
-                    padding: "1rem", 
+                    padding: "0.9rem", 
                     backgroundColor: "var(--blue-primary)", 
                     color: "#fff", 
                     border: "none", 
                     borderRadius: "4px", 
-                    fontSize: "1rem", 
-                    fontWeight: 600, 
+                    fontSize: "0.9rem", 
+                    fontFamily: "var(--font-primary), 'Inter', 'Segoe UI', sans-serif",
+                    fontWeight: 400, 
                     cursor: "pointer",
                     textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    transition: "background 0.2s"
+                    letterSpacing: "0.1em",
+                    transition: "all 0.2s"
                   }}
                   onMouseOver={(e) => e.currentTarget.style.backgroundColor = "var(--blue-dark)"}
                   onMouseOut={(e) => e.currentTarget.style.backgroundColor = "var(--blue-primary)"}
