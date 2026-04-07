@@ -688,6 +688,19 @@ export default function Home() {
             </div>
           </ScrollReveal>
         </div>
+        <ScrollReveal delay={300}>
+          <p style={{ 
+            fontSize: "0.85rem", 
+            color: "#666", 
+            marginTop: "2rem", 
+            fontStyle: "italic", 
+            textAlign: "center",
+            maxWidth: "800px",
+            margin: "2rem auto 0"
+          }}>
+            Note: Professional fees for Statutory Notices and Winding-Up Petitions are subject to adjustment based on the complexity of the matter and any additional disbursements incurred.
+          </p>
+        </ScrollReveal>
       </section>
 
       {/* ===== CONTACT ===== */}
