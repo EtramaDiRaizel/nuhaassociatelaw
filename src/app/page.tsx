@@ -11,6 +11,21 @@ export default function Home() {
     <>
       <Navbar />
 
+      <div style={{
+        position: 'fixed',
+        bottom: '10px',
+        right: '15px',
+        fontSize: '0.75rem',
+        color: 'rgba(0,0,0,0.35)',
+        pointerEvents: 'none',
+        zIndex: 9999,
+        fontWeight: 500,
+        textTransform: 'uppercase',
+        letterSpacing: '0.05em'
+      }}>
+        Disclaimer: For educational purposes only
+      </div>
+
       {/* ===== HERO ===== */}
       <section className="hero" id="home">
         <div className="hero__bg">
@@ -492,11 +507,11 @@ export default function Home() {
           <ScrollReveal delay={500}>
             <a
               className="portal__cta"
-              href="http://www.courtdates.nuhaassocs.com"
+              href="https://forms.gle/yukpgfU8DBzt6uen9"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Login to Portal
+              Client login
               <svg
                 width="16"
                 height="16"
@@ -513,75 +528,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== QUICK LINKS ===== */}
-      <section className="section quicklinks" id="resources">
+      {/* ===== STAFF LOGIN ===== */}
+      <section className="section" id="staff" style={{ backgroundColor: "#f9f9fa", borderTop: "1px solid #eaeaea", borderBottom: "1px solid #eaeaea" }}>
         <div className="container">
-          <ScrollReveal>
-            <span className="section-label">Resources</span>
-            <h2 className="section-heading">Quick Links</h2>
-          </ScrollReveal>
-          <div className="quicklinks__grid">
+          <div style={{ maxWidth: "500px", margin: "0 auto", backgroundColor: "#fff", padding: "3rem", borderRadius: "8px", boxShadow: "0 10px 40px rgba(0,0,0,0.08)" }}>
+            <ScrollReveal>
+              <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+                <span className="section-label" style={{ paddingLeft: 0, marginBottom: "0.5rem" }}>Internal Access</span>
+                <h2 className="section-heading" style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>Staff Login</h2>
+                <p style={{ color: "#666", fontSize: "0.95rem" }}>Please login to access the firm's client database and resources.</p>
+              </div>
+            </ScrollReveal>
+
             <ScrollReveal delay={100}>
-              <a href="#" className="quicklink-card">
-                <div className="quicklink-card__icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                  </svg>
+              <form 
+                onSubmit={(e) => { 
+                  e.preventDefault(); 
+                  window.open("https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP", "_blank"); 
+                }}
+                style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}
+              >
+                <div>
+                  <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, color: "#333", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="staff@nuhaassociates.com" 
+                    required 
+                    style={{ width: "100%", padding: "0.8rem 1rem", border: "1px solid #ccc", borderRadius: "4px", fontSize: "1rem", outline: "none", transition: "border 0.2s" }}
+                    onFocus={(e) => e.target.style.borderColor = "var(--blue-primary)"}
+                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                  />
                 </div>
-                <div className="quicklink-card__text">
-                  <h3>Warrant to Act</h3>
-                  <p>Download authorization form</p>
+                <div>
+                  <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, color: "#333", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Password</label>
+                  <input 
+                    type="password" 
+                    placeholder="••••••••" 
+                    required 
+                    style={{ width: "100%", padding: "0.8rem 1rem", border: "1px solid #ccc", borderRadius: "4px", fontSize: "1rem", outline: "none", transition: "border 0.2s" }}
+                    onFocus={(e) => e.target.style.borderColor = "var(--blue-primary)"}
+                    onBlur={(e) => e.target.style.borderColor = "#ccc"}
+                  />
                 </div>
-              </a>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <a href="#" className="quicklink-card">
-                <div className="quicklink-card__icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <div className="quicklink-card__text">
-                  <h3>Client Profile</h3>
-                  <p>Complete your client intake form</p>
-                </div>
-              </a>
-            </ScrollReveal>
-            <ScrollReveal delay={300}>
-              <a href="#" className="quicklink-card">
-                <div className="quicklink-card__icon">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <div className="quicklink-card__text">
-                  <h3>Data Privacy Policy</h3>
-                  <p>View our privacy commitment</p>
-                </div>
-              </a>
+                <button 
+                  type="submit" 
+                  style={{ 
+                    marginTop: "1rem", 
+                    width: "100%", 
+                    padding: "1rem", 
+                    backgroundColor: "var(--blue-primary)", 
+                    color: "#fff", 
+                    border: "none", 
+                    borderRadius: "4px", 
+                    fontSize: "1rem", 
+                    fontWeight: 600, 
+                    cursor: "pointer",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    transition: "background 0.2s"
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = "var(--blue-dark)"}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = "var(--blue-primary)"}
+                >
+                  Login to Client Database
+                </button>
+              </form>
             </ScrollReveal>
           </div>
         </div>
