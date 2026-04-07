@@ -224,7 +224,7 @@ export default function Home() {
                   className="partner-card__photo"
                 />
                 <div className="partner-card__info">
-                  <h3 className="partner-card__name">Nur Nuha</h3>
+                  <h3 className="partner-card__name">Nur Nuha LL.B (Hons) UiTM</h3>
                   <p className="partner-card__role">Managing Partner</p>
                   <p className="partner-card__specialty">
                     Corporate Litigation Specialist
@@ -240,7 +240,9 @@ export default function Home() {
                   className="partner-card__photo"
                 />
                 <div className="partner-card__info">
-                  <h3 className="partner-card__name">Nurliyana Amani</h3>
+                  <h3 className="partner-card__name">
+                    Nurliyana Amani LL.B (Hons) UiTM
+                  </h3>
                   <p className="partner-card__role">Senior Partner</p>
                   <p className="partner-card__specialty">
                     Infrastructure Disputes Expert
@@ -259,10 +261,67 @@ export default function Home() {
                 <img src="/team/Team.jpg" alt="Senior Associates Team" />
               </div>
               <div className="team__names">
-                <span>Hamzah Shahadrian</span>
-                <span>Yasmin Azezee</span>
-                <span>Nurul Iman</span>
-                <span>Aina Azrina</span>
+                <span>Hamzah Shahadrian LL.B (Hons) UiTM</span>
+                <span>Yasmin Azezee LL.B (Hons) UiTM</span>
+                <span>Nurul Iman LL.B (Hons) UiTM</span>
+                <span>Aina Azrina LL.B (Hons) UiTM</span>
+              </div>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={400}>
+            <div className="team__subsection">
+              <h3 className="team__subsection-title">Associates</h3>
+              <div className="team__grid">
+                {[
+                  {
+                    name: "Ikram Afiq",
+                    qual: "LL.B (Hons) Aberystwyth UK, CLP",
+                  },
+                  { name: "Mirza Syahmi", qual: "LL.B (Hons) UNiSZA" },
+                  { name: "Kamalin Aisyah", qual: "LL.B (Hons) IIUM" },
+                  { name: "Dania Amalina", qual: "LL.B (Hons) London, CLP" },
+                  { name: "Shafieqa Aina", qual: "LL.B (Hons) Liverpool" },
+                  { name: "Qaireena Sofea", qual: "LL.B (Hons) Liverpool" },
+                ].map((person, i) => (
+                  <div key={i} className="member-card">
+                    <div className="member-card__placeholder">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
+                    </div>
+                    <div className="member-card__info">
+                      <h4 className="member-card__name">{person.name}</h4>
+                      <p className="member-card__qual">{person.qual}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={500}>
+            <div className="team__subsection">
+              <h3 className="team__subsection-title">Personnel</h3>
+              <div className="team__grid">
+                {[
+                  { name: "Arissa Zuleikha", qual: "Legal Secretary" },
+                  {
+                    name: "Jane Nadine",
+                    qual: "Legal Administrative Assistant",
+                  },
+                  { name: "Brandon Lee", qual: "Runner" },
+                ].map((person, i) => (
+                  <div key={i} className="member-card">
+                    <div className="member-card__placeholder">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
+                    </div>
+                    <div className="member-card__info">
+                      <h4 className="member-card__name">{person.name}</h4>
+                      <p className="member-card__qual">{person.qual}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </ScrollReveal>
@@ -341,8 +400,7 @@ export default function Home() {
               Client Portal
             </h2>
             <p className="section-subtext section-subtext--white">
-              Insert your IC number and the last 2 digits of your mobile number
-              to track your case.
+              Insert your reference case number to track your case.
             </p>
           </ScrollReveal>
 
