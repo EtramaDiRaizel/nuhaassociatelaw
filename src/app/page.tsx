@@ -643,7 +643,7 @@ export default function Home() {
                 </button>
               </form>
               <div style={{ marginTop: "1.5rem", textAlign: "center", fontSize: "0.75rem", color: "#bbb" }}>
-                For marking purposes, please access the internal client database using <strong>Email: nuhalaw@gmail.com | password123</strong>.
+                For marking purposes, please access the internal client database using <strong>Email: nuhalaw@gmail.com | Password: password123</strong>.
               </div>
             </ScrollReveal>
           </div>
