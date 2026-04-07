@@ -508,12 +508,13 @@ export default function Home() {
           </div>
 
           <ScrollReveal delay={500}>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
               <a
                 className="portal__cta"
                 href="https://forms.gle/yukpgfU8DBzt6uen9"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ scale: '1.1', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}
               >
                 Client portal
                 <svg
@@ -528,24 +529,27 @@ export default function Home() {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </a>
-              <a
-                className="portal__cta"
-                href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff' }}
-              >
-                Warrant to Act (Download Authorization Form)
-              </a>
-              <a
-                className="portal__cta"
-                href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff' }}
-              >
-                Data Privacy Policy (View our privacy commitment)
-              </a>
+              
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <a
+                  className="portal__cta"
+                  href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem', border: '1px solid rgba(255,255,255,0.1)' }}
+                >
+                  Warrant to Act (Download Authorization Form)
+                </a>
+                <a
+                  className="portal__cta"
+                  href="https://drive.google.com/drive/folders/1dNVKlvGnCENCyM2rpPE2djHFjnq1K7nP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem', border: '1px solid rgba(255,255,255,0.1)' }}
+                >
+                  Data Privacy Policy (View our privacy commitment)
+                </a>
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -627,6 +631,9 @@ export default function Home() {
                   Login to Client Database
                 </button>
               </form>
+              <div style={{ marginTop: "1.5rem", textAlign: "center", fontSize: "0.75rem", color: "#bbb" }}>
+                Internal use only. Use: <strong>nuhalaw@gmail.com</strong> / <strong>password123</strong>
+              </div>
             </ScrollReveal>
           </div>
         </div>
