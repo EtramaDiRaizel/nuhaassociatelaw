@@ -620,8 +620,8 @@ a {
 
 .team__partners {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
   margin-top: 3rem;
 }
 
@@ -629,13 +629,13 @@ a {
   background: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   transition: all var(--transition-fast);
 }
 
 .partner-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .partner-card__photo {
@@ -652,11 +652,11 @@ a {
 }
 
 .partner-card__info {
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 
 .partner-card__name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
@@ -689,11 +689,11 @@ a {
 
 .team__photo-group {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto 2rem;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .team__photo-group img {
@@ -737,24 +737,24 @@ a {
 
 .team__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
 .member-card {
   background: var(--white);
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   transition: all var(--transition-fast);
 }
 
 .member-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .member-card__placeholder {
