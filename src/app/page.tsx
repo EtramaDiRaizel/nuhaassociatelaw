@@ -286,11 +286,22 @@ export default function Home() {
                 <img src="/team/Team.jpg" alt="Senior Associates Team" />
               </div>
               <div className="team__names">
-                <button onClick={() => setSelectedProfile("hamzah")} className="senior-name-btn">Hamzah Shahadrian LL.B (Hons) UiTM</button>
-                <button onClick={() => setSelectedProfile("yasmin")} className="senior-name-btn">Yasmin Azizee LL.B (Hons) UiTM</button>
-                <button onClick={() => setSelectedProfile("nurul")} className="senior-name-btn">Nurul Iman LL.B (Hons) UiTM</button>
-                <button onClick={() => setSelectedProfile("aina")} className="senior-name-btn">Aina Azrina LL.B (Hons) UiTM</button>
-              </div>
+                <button onClick={() => setSelectedProfile("hamzah")} className="senior-name-btn">
+                  Hamzah Shahadrian LL.B (Hons) UiTM
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+                <button onClick={() => setSelectedProfile("yasmin")} className="senior-name-btn">
+                  Yasmin Azizee LL.B (Hons) UiTM
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+                <button onClick={() => setSelectedProfile("nurul")} className="senior-name-btn">
+                  Nurul Iman LL.B (Hons) UiTM
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+                <button onClick={() => setSelectedProfile("aina")} className="senior-name-btn">
+                  Aina Azrina LL.B (Hons) UiTM
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>              </div>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={400}>

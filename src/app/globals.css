@@ -1278,21 +1278,26 @@ a {
 }
 
 .senior-name-btn {
-  background: none;
-  border: none;
-  padding: 0;
+  background: rgba(21, 101, 192, 0.05);
+  border: 1px solid rgba(21, 101, 192, 0.15);
+  padding: 0.6rem 1.4rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #555;
+  color: var(--blue-primary);
   cursor: pointer;
-  transition: color 0.2s;
+  border-radius: 50px;
+  transition: all 0.3s ease;
   font-family: inherit;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .senior-name-btn:hover {
-  color: var(--blue-primary);
+  background: var(--blue-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.2);
 }
