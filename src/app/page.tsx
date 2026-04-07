@@ -2,8 +2,11 @@
 
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProfileModal from "@/components/ProfileModal";
+import { useState } from "react";
 
 export default function Home() {
+  const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
   return (
     <>
       <Navbar />
@@ -66,26 +69,28 @@ export default function Home() {
             </ScrollReveal>
             <div className="about__text">
               <ScrollReveal>
-                <span className="section-label">Our Expertise</span>
+                <span className="section-label">About Us</span>
                 <h2 className="section-heading">
-                  Corporate Insolvency &amp; Infrastructure Debt Recovery
+                  30 Years of Infrastructure Debt Recovery &amp; Insolvency.
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <p>
-                  At Nuha &amp; Associates, we understand that in 2026, cash
-                  flow is the lifeblood of the construction industry. Based in
-                  the heart of Selangor, we represent specialist contractors who
-                  have been sidelined by large conglomerates.
+                  Nuha &amp; Associates has spent three decades fighting for specialist contractors across Selangor. We know that in 2026, cash flow is everything.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={400}>
                 <p>
-                  We don&apos;t believe in long, drawn-out trials when a debt is
-                  clearly admitted. We specialize in Winding-Up Petitions, with
-                  an aim to turn a &quot;refusal to pay&quot; into a legal
-                  trigger to recover what is yours.
+                  We skip the delays of traditional litigation. By specializing in Winding-Up Petitions, we turn a &quot;refusal to pay&quot; into a fast legal trigger to recover your capital.
                 </p>
+              </ScrollReveal>
+              <ScrollReveal delay={600}>
+                <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(0,0,0,0.03)", borderLeft: "4px solid #666" }}>
+                  <span className="section-label" style={{ marginBottom: "0.5rem", display: "block" }}>Our Expertise / Disclaimer</span>
+                  <p style={{ fontSize: "0.9rem", color: "#666", margin: 0 }}>
+                    <strong>Disclaimer:</strong> This website is created for academic purposes only as part of a Civil Trial simulation for Universiti Teknologi MARA (UiTM). All characters and case details are fictional.
+                  </p>
+                </div>
               </ScrollReveal>
             </div>
           </div>
@@ -217,7 +222,7 @@ export default function Home() {
 
           <div className="team__partners">
             <ScrollReveal delay={100}>
-              <div className="partner-card">
+              <div className="partner-card" onClick={() => setSelectedProfile("nuha")} style={{ cursor: "pointer" }}>
                 <img
                   src="/team/Nur Nuha.jpg"
                   alt="Nur Nuha"
@@ -229,11 +234,12 @@ export default function Home() {
                   <p className="partner-card__specialty">
                     Corporate Litigation Specialist
                   </p>
+                  <button className="profile-btn">View Profile</button>
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <div className="partner-card">
+              <div className="partner-card" onClick={() => setSelectedProfile("liyana")} style={{ cursor: "pointer" }}>
                 <img
                   src="/team/Nur Liyana.jpg"
                   alt="Nurliyana Amani"
@@ -243,10 +249,11 @@ export default function Home() {
                   <h3 className="partner-card__name">
                     Nurliyana Amani LL.B (Hons) UiTM
                   </h3>
-                  <p className="partner-card__role">Senior Partner</p>
+                  <p className="partner-card__role">Senior Associate | Lead Counsel</p>
                   <p className="partner-card__specialty">
                     Infrastructure Disputes Expert
                   </p>
+                  <button className="profile-btn">View Profile</button>
                 </div>
               </div>
             </ScrollReveal>
@@ -261,10 +268,10 @@ export default function Home() {
                 <img src="/team/Team.jpg" alt="Senior Associates Team" />
               </div>
               <div className="team__names">
-                <span>Hamzah Shahadrian LL.B (Hons) UiTM</span>
-                <span>Yasmin Azezee LL.B (Hons) UiTM</span>
-                <span>Nurul Iman LL.B (Hons) UiTM</span>
-                <span>Aina Azrina LL.B (Hons) UiTM</span>
+                <button onClick={() => setSelectedProfile("hamzah")} className="senior-name-btn">Hamzah Shahadrian LL.B (Hons) UiTM</button>
+                <button onClick={() => setSelectedProfile("yasmin")} className="senior-name-btn">Yasmin Azizee LL.B (Hons) UiTM</button>
+                <button onClick={() => setSelectedProfile("nurul")} className="senior-name-btn">Nurul Iman LL.B (Hons) UiTM</button>
+                <button onClick={() => setSelectedProfile("aina")} className="senior-name-btn">Aina Azrina LL.B (Hons) UiTM</button>
               </div>
             </div>
           </ScrollReveal>
@@ -774,6 +781,12 @@ export default function Home() {
           Staff Portal →
         </a>
       </footer>
+      {selectedProfile && (
+        <ProfileModal 
+          profileId={selectedProfile} 
+          onClose={() => setSelectedProfile(null)} 
+        />
+      )}
     </>
   );
 }

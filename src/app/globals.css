@@ -1256,3 +1256,43 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* Profile Modal Buttons */
+.profile-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--blue-primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-btn:hover {
+  background: var(--blue-dark);
+}
+
+.senior-name-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.senior-name-btn:hover {
+  color: var(--blue-primary);
+}
