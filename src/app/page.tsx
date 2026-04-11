@@ -3,12 +3,14 @@
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProfileModal from "@/components/ProfileModal";
+import TrackingModal from "@/components/TrackingModal";
 import { useState } from "react";
 
 export default function Home() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
   const [staffEmail, setStaffEmail] = useState("");
   const [staffPassword, setStaffPassword] = useState("");
+  const [isTrackingModalOpen, setIsTrackingModalOpen] = useState(false);
 
   return (
     <>
@@ -560,6 +562,19 @@ export default function Home() {
                 >
                   Data Privacy Policy (View our privacy commitment)
                 </a>
+                <button
+                  className="portal__cta"
+                  onClick={() => setIsTrackingModalOpen(true)}
+                  style={{ 
+                    backgroundColor: 'rgba(255,255,255,0.05)', 
+                    color: 'rgba(255,255,255,0.7)', 
+                    fontSize: '0.8rem', 
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Track your case
+                </button>
               </div>
             </div>
           </ScrollReveal>
@@ -862,6 +877,10 @@ export default function Home() {
           profileId={selectedProfile} 
           onClose={() => setSelectedProfile(null)} 
         />
+      )}
+
+      {isTrackingModalOpen && (
+        <TrackingModal onClose={() => setIsTrackingModalOpen(false)} />
       )}
     </>
   );
