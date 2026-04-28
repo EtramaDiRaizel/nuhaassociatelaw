@@ -48,7 +48,7 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={600}>
             <p className="hero__subtitle">
-              Specialized in Corporate Debt Recovery &amp; Insolvency
+              Specialized civil liberties in Corporate Debt Recovery &amp; Insolvency
               Litigation. We are here to represent you.
             </p>
           </ScrollReveal>
